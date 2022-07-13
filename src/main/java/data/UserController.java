@@ -118,6 +118,15 @@ public class UserController {
         } 
     }
     
+    public void commitData(){
+        try{
+            System.out.println("Guardando..");
+            this.conexion.commit();
+        } catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+    
     public boolean createNewUser(User user){
         
         String SQL_INSERT = "INSERT INTO users (name, last_name, age, email, phone) VALUES (?, ?, ?, ?, ?)";
